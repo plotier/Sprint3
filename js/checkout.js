@@ -27,7 +27,7 @@ function validate(e) {
     const alfaPattern = new RegExp('^[A-Z]+$', 'i');
     const addressPattern = new RegExp(/^[a-zA-Z\s0-9]+$/);
     const phonePattern = new RegExp(/([.0-9])/);
-    const passwordPattern = new RegExp(/^(?=.[0-9])(?=.[a-zA-Z])([a-zA-Z0-9]+)$/);
+    const passwordPattern = new RegExp(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/);
 
     
     ///////Validating name///////
