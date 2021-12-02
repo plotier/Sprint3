@@ -123,7 +123,7 @@ function calculateTotal() {
     total = 0;
     // Calculate total price of the cart either using the "cartList" array
     for (let x in subtotal) {
-        total += subtotal[x].value;
+        total += (subtotal[x].value - subtotal[x].discount);       
     }
     console.log('calculateTotal -> ', total)
 
@@ -168,12 +168,12 @@ function applyPromotionsCart() {
              dis1 = cart[i].subtotal-cart[i].subtotalWithDiscount
         }
         else if (cart[i].id == 3) {
-            cart[i].quantity >= 10 ? cart[i].subtotalWithDiscount = ((cart[i].quantity * cart[i].price) / 3 * 2).toFixed(1) : cart[i].subtotalWithDiscount = cart[i].subtotal;
+            cart[i].quantity >= 10 ? cart[i].subtotalWithDiscount = Math.round(((cart[i].quantity * cart[i].price) / 3 * 2) * 100) / 100 : cart[i].subtotalWithDiscount = cart[i].subtotal;
              dis2 = cart[i].subtotal-cart[i].subtotalWithDiscount
         }
         
     }
-    subtotal.grocery.discount = (dis1+dis2).toFixed(1);
+    subtotal.grocery.discount = Math.round((dis1+dis2) * 100) / 100;
     console.log("applyPromotionsCart --> ", cart)
 }
 
@@ -202,14 +202,38 @@ function addToCart(id) {
     }
     console.log(cart)
     calculateSubtotals();
+    applyPromotionsCart();
     calculateTotal();
-    applyPromotionsCart()
 }
 
 // Exercise 9
 function removeFromCart(id) {
-    // 1. Loop for to the array products to get the item to add to cart
-    // 2. Add found product to the cartList array
+    // 1. Loop for to the array products to get the item to add to cart mmmmmmgggrrrh       
+    // 2. Add found product to the cartList array mmmmmmmmggghhr
+
+for (let i = 0; i < products.length; i++) {
+        if (id === products[i].id) {
+            if (cart.includes(products[i]) == false){
+                alert("nothing here")
+            }
+            else {
+                for (let k = 0; k < cart.length; k++) {
+
+                    if (products[i].id == cart[k].id) {
+                         cart[k].quantity--;
+                         cart[k].subtotal -= products[i].price;
+                         if(cart[k].quantity < 1){
+                            cart.splice(k, 1)
+                        }
+                    }
+                 }
+            }
+        }
+    }
+    console.log(cart)
+    calculateSubtotals();
+    applyPromotionsCart();
+    calculateTotal();
 }
 
 // Exercise 10
