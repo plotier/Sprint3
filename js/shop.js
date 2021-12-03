@@ -248,33 +248,53 @@ function printCart() {
     list.innerHTML = "";
     for (i = 0; i < cart.length; i++) {
         const itemList = document.createElement("li");
-        itemList.className= "itemList";
+        itemList.className = "itemList";
 
-        const name = document.createElement("span");
-        // name.className ="spanCart"; para crear una clase
-        name.textContent = cart[i].name;
+        const name = document.createElement("div");
+        name.className = "nameList";
+        name.textContent = cart[i].name + " " + "(" + cart[i].quantity + ")";
         itemList.appendChild(name)
 
+        const listId = cart[i].id;
+        const firstButton = document.createElement("button");
+        firstButton.className = "btn btn-primary btn-sm";
+        firstButton.innerHTML = "+"
+        firstButton.type = "button"
+        firstButton.onclick =  () =>{
+            addToCart(listId)
+            printCart()} ;
+        name.appendChild(firstButton);
+        
+        const secondButton = document.createElement("button");
+        secondButton.className = "btn btn-primary btn-sm";
+        secondButton.innerHTML = "-"
+        secondButton.type = "button"
+        secondButton.onclick =  () =>{
+            removeFromCart(listId)
+            printCart()} ;
+        name.appendChild(secondButton);
+        
+
         const price = document.createElement("div");
-        price.className ="priceList"
-        price.textContent ="Price: €"+ cart[i].price;
+        price.className = "priceList"
+        price.textContent = "Price: €" + cart[i].price;
         itemList.appendChild(price)
 
-        if ((cart[i].id == 1) || (cart[i].id == 3)){
+        if ((cart[i].id == 1) || (cart[i].id == 3)) {
             const discount = document.createElement("div");
-            discount.className ="discountList"
-            discount.textContent ="Discount: €"+ (cart[i].subtotal - cart[i].subtotalWithDiscount);
+            discount.className = "discountList"
+            discount.textContent = "Discount: €" + (cart[i].subtotal - cart[i].subtotalWithDiscount);
             itemList.appendChild(discount)
         }
 
 
         const subtotal = document.createElement("div");
-        subtotal.className ="subtotalList"
-        subtotal.textContent ="Subtotal: €"+ (cart[i].subtotal);
+        subtotal.className = "subtotalList"
+        subtotal.textContent = "Subtotal: €" + (cart[i].subtotal);
         itemList.appendChild(subtotal)
 
 
-        totalCart.textContent= "Total: € "+ total;
+        totalCart.textContent = "Total: € " + total;
         itemList.appendChild(totalCart)
 
 
