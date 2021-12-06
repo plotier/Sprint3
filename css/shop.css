@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 body{
     font-family: Poppins;
+    background: peachpuff;
 }
 /* navbar */
 .navbar{
@@ -32,7 +33,34 @@ body{
       opacity: 0.1;
       
   }
-
+.offerSign{
+    background: rgb(0, 0, 0, 0.5);
+    width: fit-content;
+    margin: auto;
+    border-radius: 5px;
+    padding: 10px;
+}
+.titleSign{
+    background: rgb(0, 0, 0, 0.5);
+    width: 50%;
+    margin: auto;
+    border-radius: 5px;
+    padding: 10px;
+    width: fit-content;
+    margin-bottom: 325px;
+}
+.titleSignWithOffer{
+    background: rgb(0, 0, 0, 0.5);
+    width: 50%;
+    margin: auto;
+    border-radius: 5px;
+    padding: 10px;
+    width: fit-content;
+    margin-bottom: 300px;
+}
+.card{
+    border-radius: 10px;
+}
 
 
 .grocery-img{
@@ -49,5 +77,8 @@ body{
     margin-bottom: 1rem;
 }
 
+.modal-header, .modal-footer{
+    background: peachpuff;
+}
 
 

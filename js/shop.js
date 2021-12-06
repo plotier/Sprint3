@@ -257,16 +257,21 @@ function printCart() {
 
         const listId = cart[i].id;
         const firstButton = document.createElement("button");
-        firstButton.className = "btn btn-primary btn-sm";
+        firstButton.className = "btn btn-dark btn-sm ml-2";
         firstButton.innerHTML = "+"
         firstButton.type = "button"
         firstButton.onclick =  () =>{
             addToCart(listId)
             printCart()} ;
         name.appendChild(firstButton);
+
+        // const listQuantity = document.createElement("p");
+        // listQuantity.className = "listQuantity";
+        // listQuantity.textContent ="(" + cart[i].quantity + ")"; 
+        // itemList.appendChild(listQuantity)
         
         const secondButton = document.createElement("button");
-        secondButton.className = "btn btn-primary btn-sm";
+        cart[i].quantity===1? secondButton.className = "btn btn-danger btn-sm ml-2":secondButton.className = "btn btn-dark btn-sm ml-2";
         secondButton.innerHTML = "-"
         secondButton.type = "button"
         secondButton.onclick =  () =>{
