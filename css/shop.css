@@ -14,7 +14,24 @@ body{
 .nav-link:hover{
     color: white;
 }
+.carousel{
+    margin: auto;
+    max-width: 800px;
+}
 
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-height: 480px;
+    
+    background-size: cover;
+  }
+  .carousel-control-next, .carousel-control-prev {
+      width: 10%;
+      opacity: 0.1;
+      
+  }
 
 
 
