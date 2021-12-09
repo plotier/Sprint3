@@ -2,8 +2,38 @@
 
 body {
     font-family: Poppins;
+    background: peachpuff;
 }
 #errorPassword, #errorName, #errorPhone, #errorMail, #errorLastName, #errorAddress {
     display: none;
     color: red;
 }
+.biggestInput{
+    width: 80%;
+}
+.paymentSquare{
+    margin: auto;
+    width: 30rem;
+    height: 40rem;
+    background: white;
+    border-radius: 10px;
+}
+
+.creditPayment{
+    width: 400px;
+    height: 60px;
+    }
+.paypalPayment{
+    width: 200px;
+    height: 100px;
+    }
+
+.form-check {
+    display: flex;
+    align-items: center;
+    }
+    .shippingImg{
+        height: 15rem;
+        width: 18rem;
+    margin: auto;
+    }

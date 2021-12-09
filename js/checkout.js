@@ -1,3 +1,17 @@
+//////Checkout List//////
+
+// const checkoutList = document.getElementById("checkoutList");
+// console.log(cart);
+
+// const itemCheckoutList = document.createElement ("li");
+// itemCheckoutList.textContent = "hola";
+
+
+// checkoutList.appendChild(itemCheckoutList)
+
+
+//////Checkout List End//////
+
 // Get the input fields
 var password = document.querySelector(".password");
 var phone = document.querySelector('.phone');
@@ -78,3 +92,5 @@ function validate(e) {
     
     e.preventDefault();
 }
+
+
